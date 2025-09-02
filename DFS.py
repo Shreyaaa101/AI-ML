@@ -8,7 +8,7 @@ rows, cols = len(grid), len(grid[0])
 visited = set()
 
 def dfs(r, c):
-    if (r, c) in visited or r<0 or c<0 or r>=rows or c>=cols:
+    if (r, c) in visited  or r>=rows or c>=cols:
         return
     visited.add((r, c))
     
@@ -21,7 +21,8 @@ def dfs(r, c):
     root.update(); root.after(500)
     
     # explore neighbors (DFS order)
-    for dr, dc in [(0,1),(1,0),(0,-1),(-1,0)]:
+    for dr, dc in [(0,-1),(-1,0),(1,0),(0,1)]:
+        print(grid)
         dfs(r+dr, c+dc)
 
 root = tk.Tk()

@@ -29,12 +29,12 @@ canvas.itemconfig(cells[start], fill="green")
 canvas.itemconfig(cells[end], fill="red")
 
 def bfs(start, end):
-    q = deque([start])
-    
+    q = deque(           [start])
     parent = {start: None}
     visited = {start}
-
+    
     while q:
+        print(visited)
         r,c = q.popleft()
         if (r,c) == end: break
 
